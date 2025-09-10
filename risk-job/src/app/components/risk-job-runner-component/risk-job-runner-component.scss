@@ -1,0 +1,56 @@
+.risk-job-runner {
+    margin: 12px 0;
+    max-width: 900px;
+}
+
+.controls {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.controls button {
+  padding: 6px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.controls button:disabled {
+  background: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+  border-color: #ddd;
+}
+
+.controls button:not(:disabled):hover {
+  background: #e0eaff;
+  border-color: #3399ff;
+}
+
+.status { 
+    margin: 8px 0; 
+}
+
+.status.success { 
+    color: green; 
+}
+
+.status.error {
+    color: darkred;
+}
+
+.risk-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+.risk-table th, .risk-table td {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}

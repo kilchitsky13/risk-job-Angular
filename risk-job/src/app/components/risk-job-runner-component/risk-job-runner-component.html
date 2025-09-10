@@ -1,0 +1,24 @@
+<div class="risk-job-runner">
+  <div class="controls">
+    <button (click)="runRiskJob()" [disabled]="loading">▶ Run risk job</button>
+    <button (click)="initRisk()" [disabled]="loading">⟳ Init risk</button>
+  </div>
+
+  <div *ngIf="loading" class="status">Loading…</div>
+  <div *ngIf="message" class="status success">{{ message }}</div>
+  <div *ngIf="error" class="status error">{{ error }}</div>
+
+  <table *ngIf="risks?.length" class="risk-table" role="table">
+    <thead>
+      <tr><th>Borrower ID</th><th>Risk Score</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of risks">
+        <td>{{ r.borrowerId }}</td>
+        <td>{{ r.riskScore }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!risks?.length && !loading" class="hint">No borrowers to display.</div>
+</div>
